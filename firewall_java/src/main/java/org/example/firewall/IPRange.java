@@ -1,6 +1,6 @@
 package org.example.firewall;
 
-public class IPRange {
+public class IPRange implements Comparable<IPRange> {
     private long start;
     private long end;
 
@@ -21,6 +21,7 @@ public class IPRange {
         return start <= ip && ip <= end;
     }
 
+    @Override
     public int compareTo(IPRange ipRange) {
         return Long.compare(start, ipRange.start);
     }
